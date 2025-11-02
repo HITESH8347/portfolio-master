@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
-import { socialLinks } from "../personalData";
+import { socialLinks ,FooterServices,mockData} from "../personalData";
 
 export const Footer = () => {
   const iconVariants = {
@@ -14,7 +14,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div className="space-y-4 max-w-sm">
-            <h3 className="text-2xl font-bold text-white">Harsh Siddhapura</h3>
+            <h3 className="text-2xl font-bold text-white">Hitesh Solanki</h3>
             <p className="text-gray-400 max-w-[24ch] leading-relaxed">
               Creating beautiful digital experiences that make a difference.
             </p>
@@ -60,12 +60,7 @@ export const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="flex flex-col gap-2">
-              {[
-                "Web Development",
-                "UI/UX Design",
-                "Mobile Design",
-                "Branding",
-              ].map((service) => (
+              {FooterServices.map((service) => (
                 <li key={service} className="text-gray-400">
                   {service}
                 </li>
@@ -79,22 +74,22 @@ export const Footer = () => {
               India
               <br />
               <a
-                href={`tel:9714475575`}
+               href={`tel:${mockData.personal.Phone}`}
                 target="_blank"
                 className="hover:underline mt-1 inline-block"
                 rel="noreferrer"
               >
-                +91 9714475575
+                {mockData.personal.Phone}
               </a>
             </p>
             <p className="text-gray-400">
               <a
-                href={`https://mail.google.com/mail/?view=cm&fs=1&to=harshsiddhapura5557@gmail.com`}
+                href={socialLinks[2].href}
                 target="_blank"
                 className="hover:underline mt-1 inline-block"
                 rel="noreferrer"
               >
-                harshsiddhapura5557@gmail.com
+              {mockData.personal.email}
               </a>
             </p>
           </div>
@@ -102,7 +97,7 @@ export const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-6 text-center">
           <p className="text-gray-400 flex items-center justify-center gap-1 flex-wrap">
-            © {new Date().getFullYear()} Harsh Siddhapura. Made with{" "}
+            © {new Date().getFullYear()} {mockData.personal.name}. Made with{" "}
             <Heart size={14} className="text-red-500 fill-current inline" /> in
             India
           </p>

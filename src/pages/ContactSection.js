@@ -31,7 +31,7 @@ export const ContactSection = () => {
 
   /* EmailJS params (unchanged) */
   const ownerParams = {
-    to_email: "harshsiddhapura5557@gmail.com",
+    to_email: "solankihitesh8347@gmail.com",
     from_name: formData.name,
     from_email: formData.email,
     reply_to: formData.email,
@@ -39,8 +39,8 @@ export const ContactSection = () => {
     message: formData.message,
   };
   const clientParams = {
-    from_name: "Harsh Siddhapura",
-    from_email: "harshsiddhapura5557@gmail.com",
+    from_name: "Hitesh Solanki",
+    from_email: "solankihitesh8347@gmail.com",
     to_email: formData.email,
     subject: `Thank you for contacting us, ${formData.name}!`,
   };
@@ -129,6 +129,7 @@ export const ContactSection = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
+                placeholder="description"
               />
               <SubmitButton sending={sending} />
             </form>
@@ -151,22 +152,19 @@ export const ContactSection = () => {
               </h3>
               <div className="space-y-5">
                 <InfoRow Icon={Phone} label="Phone" color="yellow">
-                  <a href="tel:+919714475575" className="hover:underline">
-                    +91 97144 75575
+                  <a href={`tel:${mockData.personal.Phone}`} className="hover:underline">
+                     {mockData.personal.Phone}
                   </a>
                 </InfoRow>
                 <InfoRow Icon={Mail} label="Email" color="purple">
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=harshsiddhapura5557@gmail.com"
+                    href={`${socialLinks[2].href}`}
                     className="hover:underline break-all"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {mockData.personal.email}
                   </a>
-                </InfoRow>
-                <InfoRow Icon={MapPin} label="Location" color="blue">
-                  {mockData.personal.location}
                 </InfoRow>
                 <InfoRow
                   Icon={MessageCircle}

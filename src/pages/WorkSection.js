@@ -15,6 +15,7 @@ const ProjectMedia = ({ project }) => {
       <img
         src={project.image}
         alt={project.title}
+        hrf={project.link}
         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
       />
     );
@@ -167,8 +168,10 @@ export const WorkSection = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 leading-snug">
-                    {project.title}
+                  <h3 className="text-xl font-bold text-white mb-3 leading-snug" >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {project.title}
+                    </a>
                   </h3>
                   <p className="text-gray-400 mb-4 leading-relaxed line-clamp-3">
                     {project.description}

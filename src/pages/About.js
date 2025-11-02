@@ -53,21 +53,13 @@ export const About = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <h2 className="text-4xl font-bold mb-4">
-            I’m Harsh, a Mobile App Developer
+            I’m {mockData.personal.name}
           </h2>
           <p className="text-gray-400 mb-6 leading-relaxed">
-            I'm Harsh Siddhapura, a Mobile App Developer skilled in React
-            Native, Flutter, and Swift. I build user-friendly Android and iOS
-            apps that align with business goals. My focus is on performance,
-            clean design, and real-world impact.
+           {mockData.personal.title} {mockData.personal.description2} 
           </p>
           <p className="text-gray-400 mb-8 leading-relaxed">
-            As a freelance Mobile App Developer, I specialize in React Native,
-            iOS Swift, and Flutter to build high-quality cross-platform apps. I
-            focus on clean design, solid architecture, and smooth user
-            experience. From sleek UIs to full-scale apps, I bring precision and
-            creativity to every project. Let’s build something impactful
-            together! 🚀
+           {mockData.personal.description3} 
           </p>
           <button
             onClick={() => (window.location.href = "#contact")}
@@ -103,16 +95,10 @@ export const About = () => {
         {/* Education Card */}
         <div className="bg-[#161616] p-8 sm:p-10 rounded-3xl border border-gray-700">
           <h3 className="text-white text-3xl font-bold mb-10">Tech Skills</h3>
-          {[
-            { skill: "React Native", level: 90 },
-            { skill: "C, C++", level: 75 },
-            { skill: "Java", level: 65 },
-            { skill: "JavaScript", level: 80 },
-            { skill: "REST API", level: 85 },
-          ].map((item, idx) => (
+          {mockData.skills.map((item, idx) => (
             <div key={idx} className="mb-6">
               <div className="flex justify-between mb-1">
-                <span className="text-white font-medium">{item.skill}</span>
+                <span className="text-white font-medium">{item.name}</span>
                 <span className="text-gray-400 text-sm">{item.level}%</span>
               </div>
               <div className="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
