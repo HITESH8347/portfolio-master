@@ -12,17 +12,18 @@ const fadeInUp = {
 const ProjectMedia = ({ project }) => {
   if (project.image) {
     return (
+      <div className="relative w-full h-64 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
       <img
         src={project.image}
         alt={project.title}
-        hrf={project.link}
-        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+        className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
       />
+    </div>
     );
   }
 
   const defaultBg =
-    "linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(37,99,235,0.15) 100%)";
+    "linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(193, 172, 36, 0.15) 100%)";
 
   return (
     <div
@@ -54,14 +55,6 @@ export const WorkSection = () => {
     document.body.style.overflow = openProject ? "hidden" : "";
     return () => (document.body.style.overflow = "");
   }, [openProject]);
-
-  const categories = [
-    "All",
-    "Web Development",
-    "Mobile Design",
-    "Branding",
-    "UI Design",
-  ];
 
   const filteredProjects =
     selectedCategory === "All"

@@ -110,18 +110,19 @@ export const HeroSection = () => {
 
           {/* Right Content - Profile Image */}
           <motion.div
-            className="relative"
+             className="relative flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <div className="relative w-80 h-80 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-600 rounded-full blur-lg opacity-20"></div>
+            <div className="relative w-80 h-[26rem] mx-auto rounded-[999px] overflow-hidden">
+            <div className="w-full h-full overflow-hidden rounded-[999px] bg-transparent">
               <img
                 src={mockData.personal.profileImage}
                 alt={mockData.personal.name}
-                className="relative w-full h-full object-cover rounded-full border-4 border-gray-700"
+                  className="w-full h-full object-cover object-top rounded-[999px] border-4 border-gray-700"
               />
+              </div>
 
               {/* Floating Elements */}
               <motion.div
